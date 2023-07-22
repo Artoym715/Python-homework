@@ -47,7 +47,7 @@ else:
     for i in range(1, input_number):
         if input_number % i == 0 and input_number % 1 == 0:
             count += 1
-    if count <= 3:
+    if count < 3:
         print(f"число {input_number} является простым")
 
     else:
