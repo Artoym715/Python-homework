@@ -1,4 +1,5 @@
-from ctypes.wintypes import tagMSG
+from random import randint
+import itertools
 import copy
 # Задача: Дан список повторяющихся элементов. Вернуть список с дублирующимися элементами.
 # В результирующем списке не должно быть дубликатов.
@@ -156,7 +157,7 @@ print()
 print("Все наилучшие варианты:")
 for x in bag_all_pack(THINGS_DICT, BAG_SIZE):
     print_bag(x)
-
+print()
 # Доп Задача: Задана натуральная степень k.
 # Сформировать случайным образом список коэффициентов (значения от 0 до 10) многочлена и записать как многочлен степени k.
 # Пример:
@@ -165,3 +166,26 @@ for x in bag_all_pack(THINGS_DICT, BAG_SIZE):
 #        или  x² + 5 = 0   при списке [1 ,0 ,5 ]
 #        или  10*x² = 0   при списке [10 ,0 ,0 ]
 # k=3 - > 5*x^3 + 6*x^2 + 7*x + 10 = 0 при списке [ 5 , 6 , 7, 10]
+
+k = int(input('Задайте натуральную степень k: '))
+ratio_list = list([randint(0, 11) for i in range(k+1)]) # задаем случайный список
+if ratio_list[0] == 0: # если будет равен 0, то многочлен может быть неверным
+    ratio_list[0] = randint(1, 11)
+print(ratio_list)
+
+def get_polynomial(k, ratio_list): # далее идет загугливание информации
+    str1 = ['*x**']*(k-1) + ['*x']
+    polynomial = [[a, b, c] for a, b, c  in itertools.zip_longest(ratio_list, str1, range(k, 1, -1), fillvalue = '') if a !=0]
+    # с помощью этого метода мы объединяем несколько списков в список кортежей с самой длинной итерацией
+    # пустые кортежи заполняем пустотой ('')
+    # print(polynomial)
+    for x in polynomial:
+        x.append(' + ') # проставляем + между кортежами
+    polynomial = list(itertools.chain(*polynomial)) # объединяем в один список
+    # print(polynomial)
+    polynomial[-1] = ' = 0' # добавляем в конец (меняем последний '+' на '= 0')
+    return "".join(map(str, polynomial)).replace(' 1*x',' x') # возвращаем строку
+
+list = get_polynomial(k, ratio_list)
+print(list)
+
