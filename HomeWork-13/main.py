@@ -31,4 +31,15 @@ def dict_summ_prize_and_bet(list_name, list_bet, list_prize):
 dict_generator = {name_key: bet + ((bet / 100) * (float(prize.replace("%","")))) for name_key, bet, prize in zip(names, bets, prizes)}
 for key, values in dict_generator.items():
     print(f"Имя сотрудника: {key} \t зарплата сотрудника с учётом премии: {values} ")
+print()
+
 # Задача: Создайте функцию генератор чисел Фибоначчи (см. Википедию).
+
+def num_fib(n):
+    a = b = 1
+    for i in range(n):
+        yield a
+        a, b = b, a + b
+
+for i in num_fib(10):
+    print(i)
