@@ -247,7 +247,7 @@ class Ui_MainWindow(object):
                 error.setWindowTitle("Ошибка!!!")
                 error.setText("Сейчас это действие выполнить нельзя!")
                 error.setIcon(QMessageBox.Warning)
-                error.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
+                error.setStandardButtons(QMessageBox.Ok)
                 error.buttonClicked.connect(self.popup_action)
                 error.exec_()
 
@@ -255,7 +255,7 @@ class Ui_MainWindow(object):
             if btn.text() == "OK":
                 self.label_result.setText("0")
                 self.is_equal = False
-            elif btn.text() == "Cancel":
+            else:
                 self.label_result.setText("0")
                 self.is_equal = False
 
