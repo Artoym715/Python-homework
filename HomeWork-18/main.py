@@ -4,9 +4,13 @@
 # Возьмите 1-3 любые задания из прошлых семинаров (например сериализация данных), которые вы уже решали.
 # Превратите функции в методы класса, а параметры в свойства. Задания должны решаться через вызов методов экземпляра.
 
-from classes.Factory import Factory
+from factory.Factory import Factory
+from chess.Chess import ChessGame
 
 factory = Factory()
+
+games = ChessGame()
+
 
 employee = factory.create_employee("employee", "Дмитрий", "Бурычин", "Сергеевич", 29, 57889)
 fish = factory.create_animal("fish", 10, 20, True, "Окунь")
@@ -14,3 +18,6 @@ fish = factory.create_animal("fish", 10, 20, True, "Окунь")
 print(employee.get_level())
 fish.move()
 print(fish.get_species())
+print(games.gen_true_positions(2))
+
+

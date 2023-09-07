@@ -1,5 +1,5 @@
-from classes.Employee import Employee
-from classes.Fish import Fish
+from factory.Employee import Employee
+from factory.Fish import Fish
 
 
 class Factory:

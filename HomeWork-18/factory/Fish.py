@@ -1,4 +1,4 @@
-from classes.Animal import Animal
+from factory.Animal import Animal
 
 
 class Fish(Animal):

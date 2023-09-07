@@ -1,4 +1,4 @@
-from classes.Person import Person
+from factory.Person import Person
 
 
 class Employee(Person):
