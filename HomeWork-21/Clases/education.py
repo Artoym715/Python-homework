@@ -14,6 +14,16 @@ _DISCIPLINES = ["Математика",
                 "Литература",
                 ]
 
+class DisciplinesExeption(Exception):
+    pass
+
+
+class DisciplinesValueError(DisciplinesExeption):
+    def __init__(self, discipline: Discipline):
+        self.name = discipline.name
+
+    def __str__(self):
+        return f"{self.name} - недопустимая дисциплина, или уже есть в списке!"
 
 class Student:
     """Класс студент."""
@@ -94,7 +104,7 @@ class Student:
         if discipline.name in _DISCIPLINES and not self.find_discipline_in_progress(discipline):
             self._progress.append(discipline)
         else:
-            raise ValueError(f"{discipline.name} - недопустимая дисциплина, или уже есть в списке!")
+            raise DisciplinesValueError(discipline)
 
 
 if __name__ == '__main__':
