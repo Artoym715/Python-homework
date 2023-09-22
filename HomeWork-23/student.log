@@ -1,3 +1,9 @@
 INFO     2023-09-22 22:53:30,536 Clases.education 'Химия - 4, 15' - Ok
 ERROR    2023-09-22 22:53:30,539 Clases.education 'Химия - 5, 10' - Химия - недопустимая дисциплина, или уже есть в списке!
 INFO     2023-09-22 22:53:30,539 Clases.education 'None' - Ok
+INFO     2023-09-22 23:00:10,309 Clases.education 'Математика - 5, 10' - Ok
+ERROR    2023-09-22 23:00:10,309 Clases.education 'Математика - 5, 15' - Математика - недопустимая дисциплина, или уже есть в списке!
+INFO     2023-09-22 23:00:10,309 Clases.education 'None' - Ok
+INFO     2023-09-22 23:00:53,128 Clases.education 'Математика - 5, 10' - Ok
+INFO     2023-09-22 23:00:53,130 Clases.education 'Физика - 5, 10' - Ok
+INFO     2023-09-22 23:00:53,130 Clases.education 'None' - Ok
